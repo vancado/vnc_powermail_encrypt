@@ -1,0 +1,6 @@
+plugin.tx_vncpowermailencrypt.settings {
+	# cat=plugin.tx_vncpowermailencrypt; type=text; label=Enable encryption for sender emails
+	enabled = 1
+	# cat=plugin.tx_vncpowermailencrypt; type=text; label=Path to encryption certificates (.pem format)
+	certificatePath = EXT:vnc_powermail_encrypt/Resources/Private/Certificates
+}

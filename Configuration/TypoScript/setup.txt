@@ -1,0 +1,18 @@
+plugin.tx_powermail {
+
+	settings.setup {
+
+		encryption {
+			enabled = {$plugin.tx_vncpowermailencrypt.settings.enabled}
+			certificatePath = {$plugin.tx_vncpowermailencrypt.settings.certificatePath}
+
+			# define certificates for each email address
+			certificates {
+				1 {
+					email = info@example.com 
+					certificate = info@example.com.pem
+				}
+			}
+		}
+	}
+}
