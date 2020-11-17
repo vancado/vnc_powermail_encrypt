@@ -1,4 +1,4 @@
-# Powermail emails encryption
+# Emails encryption for powermail
 
 Allows you to encrypt recipient emails with Secure Email (S/MIME) certificate.
 Supports S/MIME certificates in PEM format, to convert .crt certificate to .pem format use following command.
