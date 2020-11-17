@@ -1,7 +1,7 @@
 {
     "name": "vancado/vnc-powermail-encrypt",
     "type": "typo3-cms-extension",
-    "description": "",
+    "description": "Adds encryption to powermail receiver emails with Secure Email (S/MIME) certificate. Supports certificates in .pem format.",
     "authors": [],
     "license": [
         "GPL-2.0-or-later"

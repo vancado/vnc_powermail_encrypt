@@ -6,7 +6,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Emails encryption for powermail',
-    'description' => 'Adds encryption to receiver emails generated with powermail with Secure Email (S/MIME) certificate. Supports certificates in .pem format',
+    'description' => 'Adds encryption to powermail receiver emails with Secure Email (S/MIME) certificate. Supports certificates in .pem format.',
     'category' => 'misc',
     'author' => 'Vancado AG',
     'author_email' => '',
