@@ -4,7 +4,7 @@
     "description": "",
     "authors": [],
     "require": {
-        "typo3/cms-core": "^9.5 || ^10.4",
+        "typo3/cms-core": "^9.5.20 || ^10.4.6",
         "in2code/powermail": "^8"
     },
     "autoload": {
