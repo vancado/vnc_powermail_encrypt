@@ -10,7 +10,7 @@ openssl x509 -in mycert.crt -out mycert.pem -outform PEM
 
 ### Installation using Composer
 
-The recommended way to install the extension is by using [Composer](https://getcomposer.org/). In your Composer based TYPO3 project root, just do `composer require vancado/vnc_powermail_encrypt`. 
+The recommended way to install the extension is by using [Composer](https://getcomposer.org/). In your Composer based TYPO3 project root, just do `composer require vancado/vnc-powermail-encrypt`. 
 
 ### Installation as extension from TYPO3 Extension Repository (TER)
 
