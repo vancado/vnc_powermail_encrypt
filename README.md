@@ -1,5 +1,11 @@
 # Powermail emails encryption
-Allows you to encrypt recipient emails with Secure Email (S/MIME) certificate
+
+Allows you to encrypt recipient emails with Secure Email (S/MIME) certificate.
+Supports S/MIME certificates in PEM format, to convert .crt certificate to .pem format use following command.
+
+```
+openssl x509 -in mycert.crt -out mycert.pem -outform PEM
+```
 ## Installation
 
 ### Installation using Composer
