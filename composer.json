@@ -7,7 +7,7 @@
         "GPL-2.0-or-later"
     ],
     "require": {
-        "typo3/cms-core": "^9.5.20 || ^10.4.6",
+        "typo3/cms-core": "^9.5.20 || ^10.4.10",
         "in2code/powermail": "^7 || ^8"
     },
     "autoload": {
