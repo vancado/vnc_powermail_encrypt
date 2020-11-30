@@ -43,6 +43,10 @@ class SendMailService
 
                     if (@file_exists($certificate)) {
                         $this->encryptMessageBody($message, $certificate);
+
+                    } else {
+                        $logger = GeneralUtility::makeInstance('TYPO3\CMS\Core\Log\LogManager')->getLogger(__CLASS__);
+                        $logger->warning('Certificate for email ' . $email['receiverEmail'] . ' does not exist, message will not be encrypted.');
                     }
                 }
             }
