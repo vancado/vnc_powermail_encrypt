@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace Vancado\VncPowermailEncrypt\Domain\Service\Mail;
 
 use In2code\Powermail\Domain\Service\Mail\SendMailService as SendMailServicePowermail;
@@ -7,7 +8,6 @@ use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
-
 
 /**
  * SendMailService
@@ -23,7 +23,7 @@ class SendMailService
      * @param array $email
      * @param SendMailServicePowermail $originalService
      */
-    public function manipulateMail($message, &$email, SendMailServicePowermail $originalService)
+    public function manipulateMail($message, &$email, SendMailServicePowermail $originalService): void
     {
 
         $settings = $originalService->getSettings();
@@ -42,16 +42,15 @@ class SendMailService
                     $certificate = $certificatePath . $item['certificate'];
 
                     if (@file_exists($certificate)) {
-                        $encryptedMessage = $this->encryptMessage($message, $certificate);
-                        $newBody = $encryptedMessage->getBody();
-                        $message->setBody($newBody);
+                        $this->encryptMessageBody($message, $certificate);
                     }
                 }
             }
         }
     }
 
-    protected function encryptMessage($message, $certificatePath) {
+    protected function encryptMessageBody(&$message, $certificatePath): void
+    {
 
         $typo3Version = VersionNumberUtility::convertVersionNumberToInteger(VersionNumberUtility::getNumericTypo3Version());
 
@@ -59,15 +58,16 @@ class SendMailService
         if ($typo3Version > 10000000) {
             $smimeSigner = new \Symfony\Component\Mime\Crypto\SMimeEncrypter($certificatePath);
             $encryptedMessage = $smimeSigner->encrypt($message);
-            return $encryptedMessage;
-        }
-
+        
         // TYPO3 v.9 uses Swift Mailer
-        if ($typo3Version > 9000000) {
+        } elseif ($typo3Version > 9000000) {
             $smimeSigner = new \Swift_Signers_SMimeSigner();
             $smimeSigner->setEncryptCertificate($certificatePath);
             $message->attachSigner($smimeSigner);
-            return $message;
+            $encryptedMessage = clone $message;
         }
+
+        $encryptedMessageBody = $encryptedMessage->getBody();
+        $message->setBody($encryptedMessageBody);
     }
 }
