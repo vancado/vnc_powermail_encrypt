@@ -6,7 +6,6 @@
     "license": [
         "GPL-2.0-or-later"
     ],
-    "version": "1.0.7",
     "require": {
         "typo3/cms-core": "^9.5.20 || ^10.4.10",
         "in2code/powermail": "^7 || ^8"
