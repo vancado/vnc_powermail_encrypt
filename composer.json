@@ -16,7 +16,6 @@
         }
     },    
     "replace": {
-        "vancado/vnc-powermail-encrypt": "self.version",
         "typo3-ter/vnc-powermail-encrypt": "self.version"
     }
 }
