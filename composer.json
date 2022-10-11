@@ -17,5 +17,10 @@
     },    
     "replace": {
         "typo3-ter/vnc-powermail-encrypt": "self.version"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "vnc_powermail_encrypt"
+        }
     }
 }
