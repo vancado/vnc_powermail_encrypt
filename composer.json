@@ -7,8 +7,8 @@
         "GPL-2.0-or-later"
     ],
     "require": {
-        "typo3/cms-core": "^9.5.20 || ^10.4.10",
-        "in2code/powermail": "^7 || ^8"
+        "typo3/cms-core": "^9.5.20 || ^10.4.10 || ^11.5",
+        "in2code/powermail": "^7 || ^8 || ^9 || ^10"
     },
     "autoload": {
         "psr-4": {
@@ -16,7 +16,11 @@
         }
     },    
     "replace": {
-        "vancado/vnc-powermail-encrypt": "self.version",
         "typo3-ter/vnc-powermail-encrypt": "self.version"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "vnc_powermail_encrypt"
+        }
     }
 }
