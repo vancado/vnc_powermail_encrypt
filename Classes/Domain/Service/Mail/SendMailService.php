@@ -1,12 +1,12 @@
 <?php
+
 declare(strict_types=1);
+
 namespace Vancado\VncPowermailEncrypt\Domain\Service\Mail;
 
 use In2code\Powermail\Domain\Service\Mail\SendMailService as SendMailServicePowermail;
 use TYPO3\CMS\Core\Mail\MailMessage;
-use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 
 /**
